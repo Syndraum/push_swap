@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 19:59:42 by roalvare          #+#    #+#             */
-/*   Updated: 2021/03/07 21:36:56 by roalvare         ###   ########.fr       */
+/*   Updated: 2021/03/07 22:02:08 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,11 @@ void	print_all_stack(t_game *game)
 	max = game->a.len;
 	if (max < game->b.len)
 		max = game->b.len;
-	ft_putstr_fd("a b|\n----\n", 1);
+	ft_putstr_fd("a b|\n", 1);
+	ft_putnbr_fd(game->a.len, 1);
+	ft_putstr_fd(" ", 1);
+	ft_putnbr_fd(game->b.len, 1);
+	ft_putstr_fd("|\n----\n", 1);
 	while (++i < max)
 	{
 		if (game->a.len < max - i)

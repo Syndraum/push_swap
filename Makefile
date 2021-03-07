@@ -10,7 +10,9 @@ SRCS	=	push_swap.c \
 			error.c \
 			stack.c \
 			swap.c \
-			push.c 
+			push.c \
+			rotate.c \
+			reverse_rotate.c
 
 OBJS	= $(addprefix ${OBJDIR}/, ${SRCS:.c=.o})
 INCLUDE	= $(addprefix ${INCDIR}/, header.h)

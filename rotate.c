@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/07 18:49:39 by roalvare          #+#    #+#             */
-/*   Updated: 2021/03/07 22:09:39 by roalvare         ###   ########.fr       */
+/*   Created: 2021/03/07 21:45:41 by roalvare          #+#    #+#             */
+/*   Updated: 2021/03/07 22:05:15 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int main(int argc, char *argv[])
+void	rotate(t_stack * stack)
 {
-	t_game	game;
+	int	i;
+	int	tmp;
+	int save;
 
-	ft_bzero(&game, sizeof(t_game));
-	check_arg(argc, argv, &game);
-	// print_all_stack(&game);
-	swap_top(&game.a);
-	// print_all_stack(&game);
-	push(&game.b, &game.a);
-	print_all_stack(&game);
-	rotate(&game.a);
-	print_all_stack(&game);
-	reverse_rotate(&game.a);
-	print_all_stack(&game);
-	free_stack(&game.a);
-	free_stack(&game.b);
-	return 0;
+	i = -1;
+	if (stack->len == 0)
+		return ;
+	save = stack->bottom[i];
+	while (++i < stack->len)
+	{
+		tmp = save;
+		save = stack->bottom[(i + 1) % (stack->len - 1)];
+		stack->bottom[(i + 1) % (stack->len - 1)] = tmp;
+	}
 }

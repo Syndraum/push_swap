@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 18:34:44 by roalvare          #+#    #+#             */
-/*   Updated: 2021/03/07 21:37:55 by roalvare         ###   ########.fr       */
+/*   Updated: 2021/03/07 22:08:48 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ void	print_all_stack(t_game *game);
 void	free_stack(t_stack *stack);
 int		swap_top(t_stack * stack);
 int	push(t_stack *dest, t_stack *src);
+void	rotate(t_stack * stack);
+void	reverse_rotate(t_stack * stack);
 
 #endif
