@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 18:57:56 by roalvare          #+#    #+#             */
-/*   Updated: 2021/03/07 20:26:13 by roalvare         ###   ########.fr       */
+/*   Updated: 2021/03/07 20:38:00 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ int	check_arg(int ac, char *av[], t_game *game)
 			return 3;
 		}
 	}
-	fill_stack(&game->a, ac - 1, &av[1]);
+	fill_stack(game, ac - 1, &av[1]);
 	return 0;
 }

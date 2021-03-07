@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 18:34:44 by roalvare          #+#    #+#             */
-/*   Updated: 2021/03/07 20:34:54 by roalvare         ###   ########.fr       */
+/*   Updated: 2021/03/07 20:39:16 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct	s_game
 
 
 int	check_arg(int ac, char *av[], t_game *game);
-int	fill_stack(t_stack *stack, int len, char	*tab[]);
+int	fill_stack(t_game *game, int len, char	*tab[]);
 void	print_stack(t_stack *stack);
 void	free_stack(t_stack *stack);
 
