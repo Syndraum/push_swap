@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 20:44:01 by roalvare          #+#    #+#             */
-/*   Updated: 2021/03/07 23:49:35 by roalvare         ###   ########.fr       */
+/*   Updated: 2021/03/08 00:32:48 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,24 @@ void	swap_top(t_stack *stack)
 	stack->bottom[top_id - 1] = tmp;
 }
 
-void	swap_top_all(t_game *game)
+void	swap_a(t_game *game, int flag)
+{
+	swap_top(&game->a);
+	if (flag == PRINT)
+		ft_putstr_fd("sa\n", 1);
+}
+
+void	swap_b(t_game *game, int flag)
+{
+	swap_top(&game->b);
+	if (flag == PRINT)
+		ft_putstr_fd("sb\n", 1);
+}
+
+void	swap_all(t_game *game, int flag)
 {
 	swap_top(&game->a);
 	swap_top(&game->b);
+	if (flag == PRINT)
+		ft_putstr_fd("ss\n", 1);
 }

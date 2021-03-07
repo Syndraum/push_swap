@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/07 21:45:41 by roalvare          #+#    #+#             */
-/*   Updated: 2021/03/08 00:36:51 by roalvare         ###   ########.fr       */
+/*   Created: 2021/03/08 00:34:40 by roalvare          #+#    #+#             */
+/*   Updated: 2021/03/08 00:37:46 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	rotate(t_stack *stack)
+void	reverse_rotate(t_stack *stack)
 {
 	int	i;
 	int	tmp;
@@ -20,34 +20,35 @@ void	rotate(t_stack *stack)
 
 	if (stack->len == 0)
 		return ;
-	i = -1;
-	save = stack->bottom[0];
-	while (++i < stack->len)
+	i = stack->len;
+	save = stack->bottom[i - 1];
+	while (--i >= 0)
 	{
 		tmp = save;
-		save = stack->bottom[(i + 1) % stack->len];
-		stack->bottom[(i + 1) % stack->len] = tmp;
+		save = stack->bottom[(i - 1 + stack->len) % stack->len];
+		stack->bottom[(i - 1 + stack->len) % stack->len] = tmp;
 	}
 }
 
-void	rotate_a(t_game *game, int flag)
+void	reverse_rotate_a(t_game *game, int flag)
 {
-	rotate(&game->a);
+	reverse_rotate(&game->a);
 	if (flag == PRINT)
-		ft_putstr_fd("ra", 1);
+		ft_putstr_fd("rra", 1);
 }
 
-void	rotate_b(t_game *game, int flag)
+void	reverse_rotate_b(t_game *game, int flag)
 {
-	rotate(&game->b);
+	reverse_rotate(&game->b);
 	if (flag == PRINT)
-		ft_putstr_fd("rb", 1);
+		ft_putstr_fd("rrb", 1);
 }
 
-void	rotate_all(t_game *game, int flag)
+void	reverse_rotate_all(t_game *game, int flag)
 {
-	rotate(&game->a);
-	rotate(&game->b);
+	reverse_rotate(&game->a);
+	reverse_rotate(&game->b);
 	if (flag == PRINT)
-		ft_putstr_fd("rb", 1);
+		ft_putstr_fd("rrr", 1);
+	
 }

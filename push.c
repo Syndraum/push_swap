@@ -6,13 +6,13 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 20:52:16 by roalvare          #+#    #+#             */
-/*   Updated: 2021/03/07 21:43:36 by roalvare         ###   ########.fr       */
+/*   Updated: 2021/03/08 00:30:23 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int	push(t_stack *dest, t_stack *src)
+int		push(t_stack *dest, t_stack *src)
 {
 	if (src->len == 0)
 		return (1);
@@ -21,4 +21,18 @@ int	push(t_stack *dest, t_stack *src)
 	(dest->len)++;
 	(src->len)--;
 	return (0);
+}
+
+void	push_a(t_game *game, int flag)
+{
+	push(&game->a, &game->b);
+	if (flag == PRINT)
+		ft_putstr_fd("pa\n", 1);
+}
+
+void	push_b(t_game *game, int flag)
+{
+	push(&game->a, &game->b);
+	if (flag == PRINT)
+		ft_putstr_fd("pa\n", 1);
 }
