@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 18:57:56 by roalvare          #+#    #+#             */
-/*   Updated: 2021/03/07 23:34:22 by roalvare         ###   ########.fr       */
+/*   Updated: 2021/03/07 23:55:43 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,14 @@ int	check_arg(int ac, char *av[], t_game *game)
 		j = -1;
 
 		while(av[i][++j])
-		if (!ft_isdigit(av[i][j]))
+		{
+			if (!ft_isdigit(av[i][j]))
+			{
+				ft_putstr_fd("Error\n", 2);
+				return (2);
+			}
+		}
+		if (av[i][0] == 0)
 		{
 			ft_putstr_fd("Error\n", 2);
 			return (2);
