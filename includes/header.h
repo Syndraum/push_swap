@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 18:34:44 by roalvare          #+#    #+#             */
-/*   Updated: 2021/03/07 23:18:05 by roalvare         ###   ########.fr       */
+/*   Updated: 2021/03/07 23:49:30 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,18 @@ typedef struct	s_game
 }				t_game;
 
 
-int	check_arg(int ac, char *av[], t_game *game);
+int		check_arg(int ac, char *av[], t_game *game);
 int		as_doublon(t_stack *stack);
-int	fill_stack(t_game *game, int len, char	*tab[]);
+int		fill_stack(t_game *game, int len, char	*tab[]);
 void	print_stack(t_stack *stack);
 void	print_all_stack(t_game *game);
 void	free_stack(t_stack *stack);
-int		swap_top(t_stack * stack);
-int	push(t_stack *dest, t_stack *src);
-void	rotate(t_stack * stack);
-void	reverse_rotate(t_stack * stack);
+void	swap_top(t_stack *stack);
+void	swap_top_all(t_game *game);
+int		push(t_stack *dest, t_stack *src);
+void	rotate(t_stack *stack);
+void	rotate_all(t_game *game);
+void	reverse_rotate(t_stack *stack);
+void	reverse_rotate_all(t_game *game);
 
 #endif

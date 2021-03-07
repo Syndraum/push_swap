@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 18:57:56 by roalvare          #+#    #+#             */
-/*   Updated: 2021/03/07 23:25:43 by roalvare         ###   ########.fr       */
+/*   Updated: 2021/03/07 23:34:22 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,7 @@ int	check_arg(int ac, char *av[], t_game *game)
 	long	tmp;
 
 	if (ac < 2)
-	{
-		ft_putstr_fd("Error : No arguments specified\n", 2);
 		return (1);
-	}
 	i = 0;
 	while(++i < ac)
 	{

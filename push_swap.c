@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 18:49:39 by roalvare          #+#    #+#             */
-/*   Updated: 2021/03/07 23:21:43 by roalvare         ###   ########.fr       */
+/*   Updated: 2021/03/07 23:27:23 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@ int main(int argc, char *argv[])
 
 	ft_bzero(&game, sizeof(t_game));
 	if (check_arg(argc, argv, &game))
+	{
+		free_stack(&game.a);
+		free_stack(&game.b);
 		return (1);
+	}
 	// print_all_stack(&game);
 	swap_top(&game.a);
 	// print_all_stack(&game);
