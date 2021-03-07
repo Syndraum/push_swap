@@ -8,7 +8,8 @@ LIBFT_FLAGS	= -L./${LIBFTDIR}/ -lft
 
 SRCS	=	push_swap.c \
 			error.c \
-			stack.c
+			stack.c \
+			swap.c
 
 OBJS	= $(addprefix ${OBJDIR}/, ${SRCS:.c=.o})
 INCLUDE	= $(addprefix ${INCDIR}/, header.h)

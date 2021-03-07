@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 19:59:42 by roalvare          #+#    #+#             */
-/*   Updated: 2021/03/07 20:42:25 by roalvare         ###   ########.fr       */
+/*   Updated: 2021/03/07 20:51:26 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,9 @@ void	print_stack(t_stack *stack)
 	while (++i < stack->len)
 	{
 		ft_putnbr_fd(stack->bottom[stack->len - i - 1], 1);
-		ft_putstr_fd("\n", 1);
+		ft_putstr_fd(", ", 1);
 	}
+	ft_putstr_fd("\n", 1);
 }
 
 void	free_stack(t_stack *stack)
