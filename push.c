@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/07 18:49:39 by roalvare          #+#    #+#             */
-/*   Updated: 2021/03/07 21:44:02 by roalvare         ###   ########.fr       */
+/*   Created: 2021/03/07 20:52:16 by roalvare          #+#    #+#             */
+/*   Updated: 2021/03/07 21:43:36 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int main(int argc, char *argv[])
+int	push(t_stack *dest, t_stack *src)
 {
-	t_game	game;
-
-	ft_bzero(&game, sizeof(t_game));
-	check_arg(argc, argv, &game);
-	// print_all_stack(&game);
-	swap_top(&game.a);
-	// print_all_stack(&game);
-	if (push(&game.b, &game.a))
-	{
-		ft_putstr_fd("Error: src stack is empty\n", 2);
+	if (src->len == 0)
 		return (1);
-	}
-	print_all_stack(&game);
-	free_stack(&game.a);
-	free_stack(&game.b);
-	return 0;
+	dest->bottom[dest->len] = src->bottom[src->len - 1];
+	src->bottom[src->len - 1] = 0;
+	(dest->len)++;
+	(src->len)--;
+	return (0);
 }
