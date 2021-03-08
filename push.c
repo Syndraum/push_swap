@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 20:52:16 by roalvare          #+#    #+#             */
-/*   Updated: 2021/03/08 00:30:23 by roalvare         ###   ########.fr       */
+/*   Updated: 2021/03/09 00:02:42 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	push_a(t_game *game, int flag)
 
 void	push_b(t_game *game, int flag)
 {
-	push(&game->a, &game->b);
+	push(&game->b, &game->a);
 	if (flag == PRINT)
-		ft_putstr_fd("pa\n", 1);
+		ft_putstr_fd("pb\n", 1);
 }
