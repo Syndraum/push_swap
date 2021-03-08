@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 16:52:14 by roalvare          #+#    #+#             */
-/*   Updated: 2021/03/09 00:14:31 by roalvare         ###   ########.fr       */
+/*   Updated: 2021/03/09 00:40:41 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ int main(int argc, char *argv[])
 		free_stack(&game.b);
 		return (1);
 	}
-	print_all_stack(&game);
 	init_game(&game);
 	char *line = NULL;
 	t_pointer f = NULL;
@@ -66,11 +65,14 @@ int main(int argc, char *argv[])
 			ft_putstr_fd("Error\n", 2);
 			break;
 		}
-		f = get_value_has_tab(line, (t_pointer*)game.tab_funtion);
+		f = get_value_hash_tab(line, (t_pointer*)game.tab_funtion);
 		f(&game, NONE);
 		free(line);
 	}
-	print_all_stack(&game);
+	if (!is_sort(&game.a) && game.b.len == 0)
+		ft_putstr_fd("[OK]\n", 1);
+	else
+		ft_putstr_fd("[KO]\n", 1);
 	free_stack(&game.a);
 	free_stack(&game.b);
 	return 0;

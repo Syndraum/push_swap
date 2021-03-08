@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 22:12:51 by roalvare          #+#    #+#             */
-/*   Updated: 2021/03/08 23:55:23 by roalvare         ###   ########.fr       */
+/*   Updated: 2021/03/09 00:27:54 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	set_value_hash_tab(char * index, void *tab, t_pointer f)
 	cast[hash(index)] = f;
 }
 
-t_pointer	get_value_has_tab(char * index, t_pointer *tab)
+t_pointer	get_value_hash_tab(char * index, t_pointer *tab)
 {
 	return (tab[hash(index)]);
 }

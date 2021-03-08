@@ -13,7 +13,8 @@ SRCS	=	error.c \
 			rotate.c \
 			reverse_rotate.c \
 			hash.c \
-			init.c
+			init.c \
+			is.c
 
 APPSRCS		= ${SRCS} push_swap.c
 CHECKSRCS	= ${SRCS} checker.c

@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 18:34:44 by roalvare          #+#    #+#             */
-/*   Updated: 2021/03/08 23:55:37 by roalvare         ###   ########.fr       */
+/*   Updated: 2021/03/09 00:38:05 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	print_stack(t_stack *stack);
 void	print_all_stack(t_game *game);
 void	free_stack(t_stack *stack);
 void	init_game(t_game *game);
+int		is_sort(t_stack *stack);
 
 void	swap_a(t_game *game, int flag);
 void	swap_b(t_game *game, int flag);
@@ -72,7 +73,7 @@ void	reverse_rotate_all(t_game *game, int flag);
 
 int			hash(char *str);
 void		set_value_hash_tab(char * index, void *tab, t_pointer f);
-t_pointer	get_value_has_tab(char * index, t_pointer *tab);
+t_pointer	get_value_hash_tab(char * index, t_pointer *tab);
 
 
 #endif
