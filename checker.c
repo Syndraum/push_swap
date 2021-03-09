@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 16:52:14 by roalvare          #+#    #+#             */
-/*   Updated: 2021/03/09 00:40:41 by roalvare         ###   ########.fr       */
+/*   Updated: 2021/03/09 00:49:37 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,9 @@ int main(int argc, char *argv[])
 		free(line);
 	}
 	if (!is_sort(&game.a) && game.b.len == 0)
-		ft_putstr_fd("[OK]\n", 1);
+		ft_putstr_fd("OK\n", 1);
 	else
-		ft_putstr_fd("[KO]\n", 1);
+		ft_putstr_fd("KO\n", 1);
 	free_stack(&game.a);
 	free_stack(&game.b);
 	return 0;
